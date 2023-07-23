@@ -8,6 +8,7 @@ Question: Given an integer numRows, return the first numRows of Pascal's triangl
                                         1   4   6   4   1
 
 Solution:
+
 ```
 class Solution {
 public:

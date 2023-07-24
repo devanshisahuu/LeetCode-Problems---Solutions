@@ -1,0 +1,27 @@
+DSA: Arrays:
+Question: Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.
+          There is only one repeated number in nums, return this repeated number.
+          You must solve the problem without modifying the array nums and uses only constant extra space.
+
+Solution:
+
+```
+class Solution {
+public:
+    int findDuplicate(vector<int>& nums) {
+        int slow = nums[0];
+        int fast = nums[0];
+        do {
+        slow = nums[slow];
+        fast = nums[nums[fast]];
+        } while (slow != fast);
+        int ptr1 = nums[0];
+        int ptr2 = slow;
+        while (ptr1 != ptr2) {
+            ptr1 = nums[ptr1];
+            ptr2 = nums[ptr2];
+        }
+        return ptr1;
+    }
+};
+```
